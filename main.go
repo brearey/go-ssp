@@ -2,7 +2,9 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
+	"time"
 )
 
 func main() {
@@ -30,5 +32,21 @@ func main() {
 		}
 	}
 
-	fmt.Printf("Ваш выбор №: %s\n", ELEMENTS[playerSelect])
+	fmt.Printf("Ваш выбор %s\n", ELEMENTS[playerSelect])
+
+	fmt.Print("Сейчас компьютер выберет свой элемент")
+	for key := 0; key < 5; key++ {
+		fmt.Print(".")
+		time.Sleep(1 * time.Second)
+	}
+	fmt.Print("\n")
+
+	computerSelect := rand.Intn(2) + 1
+	fmt.Printf("Компьютер выбрал %s\n", ELEMENTS[computerSelect])
+	fmt.Print("\n")
+	fmt.Printf("")
 }
+
+// func getWinner(playerSelect int, computerSelect int) {
+// 	switch 
+// }
